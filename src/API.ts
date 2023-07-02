@@ -115,6 +115,7 @@ export type ModelSubscriptionTodoFilterInput = {
   id?: ModelSubscriptionIDInput | null,
   name?: ModelSubscriptionStringInput | null,
   description?: ModelSubscriptionStringInput | null,
+  owner?: ModelSubscriptionStringInput | null,
   and?: Array< ModelSubscriptionTodoFilterInput | null > | null,
   or?: Array< ModelSubscriptionTodoFilterInput | null > | null,
 };
@@ -240,7 +241,6 @@ export type ListTodosQuery = {
 
 export type OnCreateTodoSubscriptionVariables = {
   filter?: ModelSubscriptionTodoFilterInput | null,
-  owner?: string | null,
 };
 
 export type OnCreateTodoSubscription = {
@@ -257,7 +257,6 @@ export type OnCreateTodoSubscription = {
 
 export type OnUpdateTodoSubscriptionVariables = {
   filter?: ModelSubscriptionTodoFilterInput | null,
-  owner?: string | null,
 };
 
 export type OnUpdateTodoSubscription = {
@@ -274,7 +273,6 @@ export type OnUpdateTodoSubscription = {
 
 export type OnDeleteTodoSubscriptionVariables = {
   filter?: ModelSubscriptionTodoFilterInput | null,
-  owner?: string | null,
 };
 
 export type OnDeleteTodoSubscription = {
