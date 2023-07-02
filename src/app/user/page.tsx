@@ -1,6 +1,5 @@
 import PageContainer from "@/components/PageContainer";
-
-import CreateTodo from "./CreateTodo";
+import CreateTodo from "@/components/CreateTodo";
 import ViewCurrentUser from "./ViewCurrentUser";
 
 export default function Home() {
