@@ -1,4 +1,22 @@
 {
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-makecognitoindepende-main-51737-authRole",
+      "UnauthRoleArn": "arn:aws:iam::693825121436:role/amplify-makecognitoindepende-main-51737-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::693825121436:role/amplify-makecognitoindepende-main-51737-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-makecognitoindepende-main-51737-deployment",
+      "UnauthRoleName": "amplify-makecognitoindepende-main-51737-unauthRole",
+      "StackName": "amplify-makecognitoindepende-main-51737",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:693825121436:stack/amplify-makecognitoindepende-main-51737/c27f6040-1897-11ee-988c-06832379e2fb",
+      "AmplifyAppId": "d306int1crk1bv"
+    },
+    "categories": {
+      "auth": {
+        "makecognitoindepende63923b7c": {}
+      }
+    }
+  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-makecognitoindepende-dev-135936-authRole",
@@ -14,6 +32,9 @@
     "categories": {
       "auth": {
         "makecognitoindepende63923b7c": {}
+      },
+      "api": {
+        "makecognitoindepende": {}
       }
     }
   }
