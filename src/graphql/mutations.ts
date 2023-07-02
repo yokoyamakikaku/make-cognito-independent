@@ -11,9 +11,11 @@ export const createTodo = /* GraphQL */ `
       id
       name
       description
-      owner
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -27,9 +29,11 @@ export const updateTodo = /* GraphQL */ `
       id
       name
       description
-      owner
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -43,9 +47,11 @@ export const deleteTodo = /* GraphQL */ `
       id
       name
       description
-      owner
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }

@@ -1,10 +1,11 @@
 import PageContainer from "@/components/PageContainer";
-import ViewNavigation from "./ViewNavigation";
+
+import CreateTodo from "./CreateTodo";
 
 export default function Home() {
   return (
     <PageContainer>
-      <ViewNavigation />
+      <CreateTodo />
     </PageContainer>
   )
 }
