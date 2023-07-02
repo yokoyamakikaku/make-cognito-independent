@@ -1,18 +1,24 @@
 'use client'
 
-import { useMutation } from "@tanstack/react-query";
-import { View } from "@aws-amplify/ui-react";
-import TodoCreateForm from "@/ui-components/TodoCreateForm";
+import { useMutation } from "@tanstack/react-query"
+import { Alert, View } from "@aws-amplify/ui-react"
+import TodoCreateForm from "@/ui-components/TodoCreateForm"
 
-import { LazyTodo, Todo } from "@/models";
-import { DataStore, ModelInit } from "@aws-amplify/datastore";
+
+import { API, graphqlOperation, GraphQLResult } from "@aws-amplify/api"
+import { CreateTodoInput, CreateTodoMutation, CreateTodoMutationVariables, Todo } from "@/API"
+import * as mutations from '@/graphql/mutations'
 
 export default function CreateTodo() {
   const mutation = useMutation({
-    async mutationFn (init: ModelInit<LazyTodo>) {
-      const todo = await DataStore.save(
-        new Todo(init)
-      );
+    async mutationFn (input: CreateTodoInput) {
+      const result = (await API.graphql(
+        graphqlOperation(mutations.createTodo, {
+          input
+        } as CreateTodoMutationVariables)
+      )) as GraphQLResult<CreateTodoMutation>
+      if (result.errors) throw result.errors
+      return result.data?.createTodo as Todo
     }
   })
 
@@ -26,6 +32,9 @@ export default function CreateTodo() {
           })
           return values
         }} />
+      {mutation.isLoading && <Alert variation="info">作成中</Alert>}
+      {mutation.isError && <Alert variation="error">エラー</Alert>}
+      {mutation.isSuccess && <Alert variation="success">作成しました</Alert>}
     </View>
   )
 }
